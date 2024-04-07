@@ -1,0 +1,49 @@
+***Conectarse mediante la consola de mysql mediante el comando mysql -u (vuestro username) -p (vuestra password). 
+
+***Ejecutar: 
+
+CREATE DATABASE recipes_db;
+
+Importar el archivo recipes.db de la carpeta database en el Mysql Workbench, DBeaver, Tableplus, phpAdmin 
+o cualquier otro que utiliceis para visualizar base de datos.
+
+En el archivo app.py de /backend teneis que rellenar con los datos de conexión a vustra base de datos (el 
+campo de localhost se queda asínormalmente el puerto de mysql por default es el 3306 y el username root, 
+pero depende de vuestra configuración)
+
+ 
+Cuando os conectéis a la db os debe aparecer un mensaje de éxito o de error al ejecutar el comando
+"python app.py" o simplemente al ejecutar el play de Visual Studio Code
+
+Hay un toal de 143 recetas. Sin repetir
+
+La estructura de la tabla recipes es la siguiente:
+
++-----------------------+--------------+------+-----+---------+----------------+
+| Field                 | Type         | Null | Key | Default | Extra          |
++-----------------------+--------------+------+-----+---------+----------------+
+| id                    | int          | NO   | PRI | NULL    | auto_increment |
+| name                  | varchar(255) | NO   |     | NULL    |                |
+| description           | text         | YES  |     | NULL    |                |
+| ingredients           | text         | NO   |     | NULL    |                |
+| instructions          | text         | NO   |     | NULL    |                |
+| preparationTime       | int          | YES  |     | NULL    |                |
+| servings              | int          | YES  |     | NULL    |                |
+| photoUrl              | varchar(255) | YES  |     | NULL    |                |
+| protein_per_Serving   | float        | YES  |     | NULL    |                |
+| magnesium_per_Serving | float        | YES  |     | NULL    |                |
+| iron_per_Serving      | float        | YES  |     | NULL    |                |
+| calcium_per_Serving   | float        | YES  |     | NULL    |                |
+| vitaminC_per_Serving  | float        | YES  |     | NULL    |                |
+| fiber_per_Serving     | float        | YES  |     | NULL    |                |
+| calories_per_Serving  | float        | YES  |     | NULL    |                |
+| totalFats_per_Serving | float        | YES  |     | NULL    |                |
+| sugars_per_Serving    | float        | YES  |     | NULL    |                |
+| sodium_per_Serving    | float        | YES  |     | NULL    |                |
+| isVegetarian          | tinyint(1)   | YES  |     | NULL    |                |
+| isVegan               | tinyint(1)   | YES  |     | NULL    |                |
+| suitableForDiabetics  | tinyint(1)   | YES  |     | NULL    |                |
+| lowInSodium           | tinyint(1)   | YES  |     | NULL    |                |
+| glutenFree            | tinyint(1)   | YES  |     | NULL    |                |
+| isBreakfast           | tinyint(1)   | YES  |     | NULL    |                |
++-----------------------+--------------+------+-----+---------+----------------+
